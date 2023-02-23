@@ -6,15 +6,14 @@ class GetNewsArticle {
   Future<List<Article>> getArticle() async {
     final response = await http.get(Uri.parse(
         "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"));
-    // final uri = Uri.https(
-    // "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json");
-    // final response = await client.get("");
     Map<String, dynamic> json = jsonDecode(response.body);
     List<dynamic> body = json['articles'];
-    print("prn data");
+    print("prnt data");
     print(json);
     List<Article> articles =
         body.map((dynamic item) => Article.fromJson(item)).toList();
+    print('print data');
+    print(articles);
     return articles;
   }
 }

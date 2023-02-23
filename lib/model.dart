@@ -1,9 +1,9 @@
 class Article {
   Source source;
-  String author;
-  String title;
-  String description;
-  String urlToImage;
+  String? author;
+  String? title;
+  String? description;
+  String? urlToImage;
 
   Article({
     required this.source,
@@ -17,9 +17,9 @@ class Article {
     return Article(
       source: Source.fromJson(json['source']),
       author: json['author'],
-      title: json['title'] as String,
-      description: json['description'] as String,
-      urlToImage: json['urlToImage'] as String,
+      title: json['title'],
+      description: json['description'],
+      urlToImage: json['urlToImage'],
     );
   }
 }

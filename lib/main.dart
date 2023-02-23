@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   image:
-                                      NetworkImage(articles[index].urlToImage),
+                                      NetworkImage(articles[index].urlToImage!),
                                   fit: BoxFit.cover),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
 
                           // News Title
                           Text(
-                            articles[index].title,
+                            articles[index].title!,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0,
@@ -126,7 +126,7 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(article.title),
+        title: Text(article.title!),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -139,7 +139,8 @@ class ArticlePage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
+                    image: NetworkImage(article.urlToImage!),
+                    fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(12.0),
               ),
             ),
@@ -163,7 +164,7 @@ class ArticlePage extends StatelessWidget {
               height: 8.0,
             ),
             Text(
-              article.description,
+              article.description!,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
@@ -171,7 +172,7 @@ class ArticlePage extends StatelessWidget {
             ),
             // News Author
             Text(
-              article.author,
+              article.author!,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
