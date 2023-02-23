@@ -171,13 +171,17 @@ class ArticlePage extends StatelessWidget {
               ),
             ),
             // News Author
-            Text(
-              article.author!,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16.0,
-              ),
-            )
+            SimpleDialog(
+              children: [
+                Text(
+                  article.author!,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
